@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Mundo de Videojuegos</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+<body>
+
+    <!-- ========================================
+         ENCABEZADO
+    ======================================== -->
+
+    <header class="encabezado">
+
+        <div class="logo">
+            🎮 <span>Mundo de <strong>Videojuegos</strong></span>
+        </div>
+
+        <nav class="menu-principal">
+
+            <a href="index.html" class="activo">
+                Inicio
+            </a>
+
+            <a href="#videojuegos">
+                Videojuegos
+            </a>
+
+            <a href="#" id="botonRecomendaciones">
+                Recomendaciones
+            </a>
+
+            <a href="#contacto">
+                Contacto
+            </a>
+
+            <!-- AJUSTES -->
+
+            <div class="menu-ajustes">
+
+                <button
+                    type="button"
+                    id="botonAjustes"
+                    class="boton-ajustes">
+
+                    ⚙️ Ajustes
+
+                </button>
+
+                <div
+                    id="menuAjustes"
+                    class="opciones-ajustes">
+
+                    <a href="login.html" id="enlaceLogin">
+                        🔑 Iniciar sesión
+                    </a>
+
+                    <a href="cuenta.html" id="enlaceRegistro">
+                        📝 Registrarse
+                    </a>
+
+                    <a href="perfil.html">
+                        👤 Mi perfil
+                    </a>
+
+                    <a href="favoritos.html">
+                        ❤️ Favoritos
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- USUARIO -->
+
+            <a
+                href="perfil.html"
+                id="usuarioMenu"
+                class="usuario-menu">
+
+                <img
+                    id="fotoMenu"
+                    class="foto-menu"
+                    src="img/perfil.png"
+                    alt="Mi perfil">
+
+                <span id="nombreMenu"></span>
+
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ========================================
+         HERO
+    ======================================== -->
+
+    <section class="hero">
+
+        <div class="hero-texto">
+
+            <p class="pequeno">
+                BIENVENIDOS A
+            </p>
+
+            <h1>
+                Mundo de
+                <span>Videojuegos</span>
+            </h1>
+
+            <p class="descripcion">
+                Descubre nuevos mundos, conoce grandes aventuras
+                y encuentra tus próximos videojuegos favoritos.
+            </p>
+
+            <a
+                href="#videojuegos"
+                class="boton-principal">
+
+                🎮 Explorar videojuegos
+
+            </a>
+
+        </div>
+
+
+        <div class="hero-imagen">
+
+            <div class="mando">
+
+                <div class="joystick joystick-izquierdo"></div>
+
+                <div class="joystick joystick-derecho"></div>
+
+                <div class="cruz">
+
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+                <div class="botones">
+
+                    <span class="boton-y">Y</span>
+                    <span class="boton-x">X</span>
+                    <span class="boton-b">B</span>
+                    <span class="boton-a">A</span>
+
+                </div>
+
+                <div class="boton-central uno"></div>
+
+                <div class="boton-central dos"></div>
+
+                <div class="luz-azul"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         SECCIÓN VIDEOJUEGOS
+    ======================================== -->
+
+    <section
+        id="videojuegos"
+        class="seccion-videojuegos">
+
+        <div class="titulo-seccion">
+
+            <span>🎮</span>
+
+            <h2>Videojuegos recomendados</h2>
+
+            <span>🎮</span>
+
+            <p class="subtitulo">
+                Descubre aventuras que podrían convertirse
+                en tus próximas favoritas.
+            </p>
+
+        </div>
+
+
+        <!-- BUSCADOR -->
+
+        <div class="buscador">
+
+            <span class="icono-busqueda">🔎</span>
+
+            <input
+                type="text"
+                id="buscador"
+                placeholder="Busca tu próximo videojuego..."
+                autocomplete="off">
+
+            <span class="decoracion">✦</span>
+
+        </div>
+
+
+        <!-- CONTENEDOR DE VIDEOJUEGOS -->
+
+        <div
+            class="contenedor-videojuegos"
+            id="contenedorVideojuegos">
+
+
+            <!-- VIDEOJUEGO 1 -->
+
+            <article
+                class="videojuego"
+                data-nombre="Elden Ring">
+
+                <div class="portada">
+
+                    <img
+                        src="img/eldenring.jpg"
+                        alt="Elden Ring">
+
+                </div>
+
+                <div class="informacion">
+
+                    <h3>Elden Ring</h3>
+
+                    <p class="autor">
+                        FromSoftware
+                    </p>
+
+                    <div class="linea"></div>
+
+                    <p>
+                        Explora un enorme mundo de fantasía,
+                        descubre misterios y enfrenta grandes
+                        desafíos en una aventura llena de exploración.
+                    </p>
+
+                    <div class="zona-valoracion">
+
+                        <div class="estrellas">
+                            ★★★★★
+                        </div>
+
+                        <button
+                            type="button"
+                            class="boton-valorar">
+
+                            ⭐ Valorar
+
+                        </button>
+
+                    </div>
+
+                    <div class="acciones-videojuego">
+
+                        <a
+                            href="detalles/eldenring.html"
+                            class="boton-videojuego">
+
+                            Ver detalles
+
+                        </a>
+
+                        <button
+                            type="button"
+                            class="favorito"
+                            data-id="elden-ring"
+                            data-nombre="Elden Ring"
+                            data-imagen="img/eldenring.jpg">
+
+                            ❤
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- VIDEOJUEGO 2 -->
+
+            <article
+                class="videojuego"
+                data-nombre="God of War Ragnarök">
+
+                <div class="portada">
+
+                    <img
+                        src="img/godofwar.jpg"
+                        alt="God of War Ragnarök">
+
+                </div>
+
+                <div class="informacion">
+
+                    <h3>God of War Ragnarök</h3>
+
+                    <p class="autor">
+                        Santa Monica Studio
+                    </p>
+
+                    <div class="linea"></div>
+
+                    <p>
+                        Embárcate en un viaje épico a través
+                        de los nueve reinos nórdicos junto
+                        a Kratos y Atreus.
+                    </p>
+
+                    <div class="zona-valoracion">
+
+                        <div class="estrellas">
+                            ★★★★★
+                        </div>
+
+                        <button
+                            type="button"
+                            class="boton-valorar">
+
+                            ⭐ Valorar
+
+                        </button>
+
+                    </div>
+
+                    <div class="acciones-videojuego">
+
+                        <a
+                            href="detalles/godofwar.html"
+                            class="boton-videojuego">
+
+                            Ver detalles
+
+                        </a>
+
+                        <button
+                            type="button"
+                            class="favorito"
+                            data-id="god-of-war"
+                            data-nombre="God of War Ragnarök"
+                            data-imagen="img/godofwar.jpg">
+
+                            ❤
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- VIDEOJUEGO 3 -->
+
+            <article
+                class="videojuego"
+                data-nombre="Zelda Tears of the Kingdom">
+
+                <div class="portada">
+
+                    <img
+                        src="img/zelda.jpg"
+                        alt="Zelda Tears of the Kingdom">
+
+                </div>
+
+                <div class="informacion">
+
+                    <h3>
+                        Zelda: Tears of the Kingdom
+                    </h3>
+
+                    <p class="autor">
+                        Nintendo
+                    </p>
+
+                    <div class="linea"></div>
+
+                    <p>
+                        Explora los cielos y la tierra de Hyrule
+                        creando armas y construcciones únicas.
+                    </p>
+
+                    <div class="zona-valoracion">
+
+                        <div class="estrellas">
+                            ★★★★★
+                        </div>
+
+                        <button
+                            type="button"
+                            class="boton-valorar">
+
+                            ⭐ Valorar
+
+                        </button>
+
+                    </div>
+
+                    <div class="acciones-videojuego">
+
+                        <a
+                            href="detalles/zelda.html"
+                            class="boton-videojuego">
+
+                            Ver detalles
+
+                        </a>
+
+                        <button
+                            type="button"
+                            class="favorito"
+                            data-id="zelda-totk"
+                            data-nombre="Zelda: Tears of the Kingdom"
+                            data-imagen="img/zelda.jpg">
+
+                            ❤
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+            <!-- VIDEOJUEGO 4 -->
+
+            <article
+                class="videojuego"
+                data-nombre="Red Dead Redemption 2">
+
+                <div class="portada">
+
+                    <img
+                        src="img/rdr2.jpg"
+                        alt="Red Dead Redemption 2">
+
+                </div>
+
+                <div class="informacion">
+
+                    <h3>Red Dead Redemption 2</h3>
+
+                    <p class="autor">
+                        Rockstar Games
+                    </p>
+
+                    <div class="linea"></div>
+
+                    <p>
+                        Vive la historia de Arthur Morgan
+                        en un detallado mundo abierto
+                        del Lejano Oeste.
+                    </p>
+
+                    <div class="zona-valoracion">
+
+                        <div class="estrellas">
+                            ★★★★★
+                        </div>
+
+                        <button type="button" class="boton-valorar">
+                            ⭐ Valorar
+                        </button>
+
+                    </div>
+
+                    <div class="acciones-videojuego">
+
+                        <a
+                            href="detalles/rdr2.html"
+                            class="boton-videojuego">
+
+                            Ver detalles
+
+                        </a>
+
+                        <button
+                            type="button"
+                            class="favorito"
+                            data-id="rdr2"
+                            data-nombre="Red Dead Redemption 2"
+                            data-imagen="img/rdr2.jpg">
+
+                            ❤
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- VIDEOJUEGO 5 -->
+
+            <article
+                class="videojuego"
+                data-nombre="Cyberpunk 2077">
+
+                <div class="portada">
+
+                    <img
+                        src="img/cyberpunk.jpg"
+                        alt="Cyberpunk 2077">
+
+                </div>
+
+                <div class="informacion">
+
+                    <h3>Cyberpunk 2077</h3>
+
+                    <p class="autor">
+                        CD Projekt Red
+                    </p>
+
+                    <div class="linea"></div>
+
+                    <p>
+                        Adéntrate en Night City, una megalópolis
+                        obsesionada con el poder, el glamur
+                        y las modificaciones corporales.
+                    </p>
+
+                    <div class="zona-valoracion">
+
+                        <div class="estrellas">
+                            ★★★★☆
+                        </div>
+
+                        <button type="button" class="boton-valorar">
+                            ⭐ Valorar
+                        </button>
+
+                    </div>
+
+                    <div class="acciones-videojuego">
+
+                        <a
+                            href="detalles/cyberpunk.html"
+                            class="boton-videojuego">
+
+                            Ver detalles
+
+                        </a>
+
+                        <button
+                            type="button"
+                            class="favorito"
+                            data-id="cyberpunk-2077"
+                            data-nombre="Cyberpunk 2077"
+                            data-imagen="img/cyberpunk.jpg">
+
+                            ❤
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- VIDEOJUEGO 6 -->
+
+            <article
+                class="videojuego"
+                data-nombre="Hollow Knight">
+
+                <div class="portada">
+
+                    <img
+                        src="img/hollowknight.jpg"
+                        alt="Hollow Knight">
+
+                </div>
+
+                <div class="informacion">
+
+                    <h3>Hollow Knight</h3>
+
+                    <p class="autor">
+                        Team Cherry
+                    </p>
+
+                    <div class="linea"></div>
+
+                    <p>
+                        Explora un vasto reino arruinado
+                        de insectos y héroes en este
+                        aclamado juego de acción en 2D.
+                    </p>
+
+                    <div class="zona-valoracion">
+
+                        <div class="estrellas">
+                            ★★★★★
+                        </div>
+
+                        <button type="button" class="boton-valorar">
+                            ⭐ Valorar
+                        </button>
+
+                    </div>
+
+                    <div class="acciones-videojuego">
+
+                        <a
+                            href="detalles/hollowknight.html"
+                            class="boton-videojuego">
+
+                            Ver detalles
+
+                        </a>
+
+                        <button
+                            type="button"
+                            class="favorito"
+                            data-id="hollow-knight"
+                            data-nombre="Hollow Knight"
+                            data-imagen="img/hollowknight.jpg">
+
+                            ❤
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         MODAL DE RECOMENDACIONES
+    ======================================== -->
+
+    <div
+        id="modalRecomendaciones"
+        class="modal-recomendaciones">
+
+        <div class="contenido-modal">
+
+            <button
+                type="button"
+                class="cerrar-modal"
+                id="cerrarModal">
+
+                &times;
+
+            </button>
+
+            <h2>✨ Nuestras recomendaciones</h2>
+
+            <p class="subtitulo-modal">
+                Descubre otras historias que podrían gustarte.
+            </p>
+
+            <div class="grid-recomendaciones">
+
+
+                <!-- RECOMENDACIÓN 1 -->
+
+                <div class="tarjeta-rec">
+
+                    <div class="portada-rec">
+
+                        <img
+                            src="img/eldenring.jpg"
+                            alt="Elden Ring">
+
+                    </div>
+
+                    <h4>Elden Ring</h4>
+
+                    <p>FromSoftware</p>
+
+                    <div class="estrellas">
+                        ★★★★★
+                    </div>
+
+                </div>
+
+
+                <!-- RECOMENDACIÓN 2 -->
+
+                <div class="tarjeta-rec">
+
+                    <div class="portada-rec">
+
+                        <img
+                            src="img/godofwar.jpg"
+                            alt="God of War">
+
+                    </div>
+
+                    <h4>God of War Ragnarök</h4>
+
+                    <p>Santa Monica Studio</p>
+
+                    <div class="estrellas">
+                        ★★★★★
+                    </div>
+
+                </div>
+
+
+                <!-- RECOMENDACIÓN 3 -->
+
+                <div class="tarjeta-rec">
+
+                    <div class="portada-rec">
+
+                        <img
+                            src="img/zelda.jpg"
+                            alt="Zelda">
+
+                    </div>
+
+                    <h4>Zelda: Tears of the Kingdom</h4>
+
+                    <p>Nintendo</p>
+
+                    <div class="estrellas">
+                        ★★★★★
+                    </div>
+
+                </div>
+
+
+                <!-- RECOMENDACIÓN 4 -->
+
+                <div class="tarjeta-rec">
+
+                    <div class="portada-rec">
+
+                        <img
+                            src="img/hollowknight.jpg"
+                            alt="Hollow Knight">
+
+                    </div>
+
+                    <h4>Hollow Knight</h4>
+
+                    <p>Team Cherry</p>
+
+                    <div class="estrellas">
+                        ★★★★★
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- ========================================
+         CONTACTO Y UBICACIÓN
+    ======================================== -->
+
+    <section
+        id="contacto"
+        class="seccion-contacto">
+
+        <div class="titulo-seccion">
+
+            <span>📍</span>
+
+            <h2>Contáctanos</h2>
+
+            <span>📍</span>
+
+            <p class="subtitulo">
+                Encuéntranos en nuestra ubicación.
+            </p>
+
+        </div>
+
+
+        <div class="contenedor-contacto">
+
+
+            <!-- INFORMACIÓN -->
+
+            <div class="informacion-contacto">
+
+                <h3>
+                    📍 Nuestra ubicación
+                </h3>
+
+                <p>
+                    <strong>
+                        Instituto Nacional de Armenia
+                    </strong>
+                </p>
+
+                <p>
+                    Armenia, Sonsonate, El Salvador.
+                </p>
+
+                <p>
+                    Visítanos y conoce nuestra ubicación.
+                </p>
+
+            </div>
+
+
+            <!-- MAPA -->
+
+            <div class="mapa-contacto">
+
+                <iframe
+                    src="https://www.google.com/maps?q=Instituto+Nacional+de+Armenia+Sonsonate+El+Salvador&output=embed"
+                    width="100%"
+                    height="350"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+
+                </iframe>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================
+         PIE DE PÁGINA
+    ======================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Mundo de Videojuegos |
+            Todos los derechos reservados
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT EXTERNO -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

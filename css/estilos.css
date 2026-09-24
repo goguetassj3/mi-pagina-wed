@@ -1,0 +1,5153 @@
+/* =========================================================
+   MUNDO DE VIDEOJUEGOS
+   DISEÑO NEGRO + AZUL
+   PC + TABLET + TELÉFONO
+========================================================= */
+
+
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050911;
+    color: #f5f7fa;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   ENCABEZADO
+========================================================= */
+
+.encabezado {
+    width: 100%;
+    min-height: 75px;
+
+    padding: 14px 4%;
+
+    background: #030811;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    border-bottom: 1px solid #163252;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, .35);
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+.logo strong {
+    color: #1680ff;
+
+    text-shadow:
+        0 0 10px rgba(22, 128, 255, .45);
+}
+
+
+/* NAVEGACIÓN */
+
+.encabezado nav {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 24px;
+}
+
+.encabezado nav > a {
+    color: #dce5f0;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+.encabezado nav > a:hover,
+.encabezado nav > a.activo {
+    color: #1680ff;
+
+    text-shadow:
+        0 0 8px rgba(22, 128, 255, .45);
+}
+
+
+/* =========================================================
+   AJUSTES
+========================================================= */
+
+/* ==========================================
+   MENÚ DE AJUSTES
+========================================== */
+
+.menu-ajustes {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+
+/* BOTÓN AJUSTES */
+
+.boton-ajustes {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 18px;
+
+    border: 1px solid #008cff;
+    border-radius: 8px;
+
+    background: #07101e;
+    color: white;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+.boton-ajustes:hover {
+    background: #0b1d35;
+
+    border-color: #00aaff;
+
+    box-shadow:
+        0 0 10px rgba(0, 140, 255, 0.5),
+        0 0 20px rgba(0, 140, 255, 0.2);
+
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================
+   OPCIONES DEL MENÚ
+========================================== */
+
+.opciones-ajustes {
+    position: absolute;
+
+    top: calc(100% + 10px);
+    right: 0;
+
+    width: 190px;
+
+    display: none;
+
+    flex-direction: column;
+
+    padding: 8px;
+
+    background: #07101e;
+
+    border: 1px solid #008cff;
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 15px rgba(0, 140, 255, 0.35);
+
+    z-index: 1000;
+}
+
+
+/* CUANDO SE ABRE */
+
+.opciones-ajustes.mostrar {
+    display: flex;
+}
+
+
+/* ENLACES */
+
+.opciones-ajustes a {
+    display: block;
+
+    padding: 11px 12px;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+
+.opciones-ajustes a:hover {
+    background: #0b2845;
+
+    color: #4db8ff;
+}
+
+/* =========================================================
+   USUARIO
+========================================================= */
+
+.usuario-menu {
+    display: none;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+}
+
+.usuario-menu img {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 2px solid #1680ff;
+
+    box-shadow:
+        0 0 12px rgba(22, 128, 255, .5);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 580px;
+
+    padding: 80px 7%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 40px;
+
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(0, 102, 255, .20),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(0, 70, 180, .10),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #050911,
+            #091321,
+            #050911
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* línea brillante */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 8%;
+    right: 8%;
+
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #1680ff,
+        transparent
+    );
+
+    box-shadow:
+        0 0 12px #1680ff;
+}
+
+
+/* TEXTO HERO */
+
+.hero-texto {
+    max-width: 620px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.pequeno {
+    color: #1680ff;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 10px rgba(22, 128, 255, .5);
+}
+
+.hero h1 {
+    color: #ffffff;
+
+    font-size: clamp(48px, 6vw, 82px);
+
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: #1680ff;
+
+    text-shadow:
+        0 0 20px rgba(22, 128, 255, .45);
+}
+
+.descripcion {
+    max-width: 560px;
+
+    color: #aebdce;
+
+    font-size: 17px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   BOTÓN PRINCIPAL
+========================================================= */
+
+.boton-principal {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 13px 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1680ff,
+            #0052d9
+        );
+
+    color: #ffffff;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 100, 255, .30);
+
+    transition: .3s;
+}
+
+.boton-principal:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 35px rgba(0, 110, 255, .50);
+}
+
+
+/* =========================================================
+   MANDO
+========================================================= */
+
+.hero-imagen {
+    min-height: 350px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* CUERPO DEL CONTROL */
+
+.mando {
+    width: 330px;
+    height: 220px;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111923,
+            #05080d
+        );
+
+    border: 2px solid #15385f;
+
+    border-radius: 80px 80px 65px 65px;
+
+    transform: rotate(-3deg);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.7),
+        inset 0 0 30px rgba(0,80,180,.10),
+        0 0 25px rgba(0,100,255,.15);
+
+    transition: .4s;
+}
+
+.mando:hover {
+    transform: rotate(0deg) scale(1.04);
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,.8),
+        0 0 35px rgba(0,100,255,.35);
+}
+
+
+/* PARTE SUPERIOR */
+
+.mando-superior {
+    position: absolute;
+
+    width: 190px;
+    height: 30px;
+
+    top: 10px;
+    left: 70px;
+
+    background: #0c121b;
+
+    border-radius: 50%;
+}
+
+
+/* JOYSTICKS */
+
+.joystick {
+    position: absolute;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #111b29,
+            #02050a
+        );
+
+    border: 2px solid #20466f;
+
+    box-shadow:
+        inset 0 0 10px rgba(0,0,0,.8),
+        0 0 8px rgba(0,100,255,.15);
+}
+
+.joystick-izquierdo {
+    left: 65px;
+    top: 80px;
+}
+
+.joystick-derecho {
+    right: 65px;
+    top: 80px;
+}
+
+
+/* CRUZ */
+
+.cruz {
+    position: absolute;
+
+    left: 30px;
+    top: 85px;
+
+    width: 60px;
+    height: 60px;
+}
+
+.cruz span {
+    position: absolute;
+
+    background: #182433;
+
+    border-radius: 5px;
+
+    border: 1px solid #2a4d75;
+}
+
+.cruz span:first-child {
+    width: 60px;
+    height: 20px;
+
+    top: 20px;
+    left: 0;
+}
+
+.cruz span:last-child {
+    width: 20px;
+    height: 60px;
+
+    top: 0;
+    left: 20px;
+}
+
+
+/* BOTONES */
+
+.botones {
+    position: absolute;
+
+    right: 22px;
+    top: 75px;
+
+    width: 70px;
+    height: 70px;
+}
+
+.botones span {
+    position: absolute;
+
+    width: 23px;
+    height: 23px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #102139;
+
+    border: 1px solid #1680ff;
+
+    color: #5da9ff;
+
+    font-size: 10px;
+
+    box-shadow:
+        0 0 8px rgba(0,110,255,.3);
+}
+
+.boton-y {
+    top: 0;
+    left: 23px;
+}
+
+.boton-x {
+    top: 23px;
+    left: 0;
+}
+
+.boton-b {
+    top: 23px;
+    right: 0;
+}
+
+.boton-a {
+    bottom: 0;
+    left: 23px;
+}
+
+
+/* BOTONES CENTRALES */
+
+.boton-central {
+    position: absolute;
+
+    width: 28px;
+    height: 8px;
+
+    background: #111c29;
+
+    border-radius: 10px;
+
+    bottom: 48px;
+}
+
+.boton-central.uno {
+    left: 120px;
+}
+
+.boton-central.dos {
+    left: 170px;
+}
+
+
+/* LUZ */
+
+.luz-azul {
+    position: absolute;
+
+    width: 60px;
+    height: 3px;
+
+    background: #1680ff;
+
+    left: 135px;
+    bottom: 27px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 8px #1680ff,
+        0 0 20px #1680ff;
+}
+
+
+/* =========================================================
+   SECCIÓN VIDEOJUEGOS
+========================================================= */
+
+.seccion-libros {
+    width: 100%;
+
+    padding: 85px 6%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #070b12,
+            #09101a
+        );
+}
+
+
+/* TÍTULO */
+
+.titulo-seccion {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.titulo-seccion > span {
+    color: #1680ff;
+
+    font-size: 20px;
+}
+
+.titulo-seccion h2 {
+    display: inline-block;
+
+    margin: 0 15px;
+
+    color: #ffffff;
+
+    font-size: clamp(30px, 4vw, 44px);
+
+    text-shadow:
+        0 0 15px rgba(22,128,255,.15);
+}
+
+.subtitulo {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #8495aa;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   BUSCADOR
+========================================================= */
+
+.buscador {
+    width: min(650px, 100%);
+
+    height: 54px;
+
+    margin: 30px auto 50px;
+
+    background: #091321;
+
+    border: 1px solid #24517f;
+
+    border-radius: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 18px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.35);
+
+    transition: .3s;
+}
+
+.buscador:focus-within {
+    border-color: #1680ff;
+
+    box-shadow:
+        0 0 20px rgba(0,110,255,.20);
+}
+
+.icono-busqueda {
+    margin-right: 10px;
+
+    font-size: 20px;
+}
+
+.buscador input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 15px;
+}
+
+.buscador input::placeholder {
+    color: #65778d;
+}
+
+.decoracion {
+    color: #1680ff;
+
+    text-shadow:
+        0 0 10px #1680ff;
+}
+
+
+/* =========================================================
+   TARJETAS
+========================================================= */
+
+.contenedor-libros {
+    width: 100%;
+
+    max-width: 1300px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+
+/* TARJETA */
+
+.libro {
+    min-width: 0;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0d151f,
+            #070b11
+        );
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    border: 1px solid #1c426a;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.45);
+
+    transition:
+        transform .35s,
+        box-shadow .35s,
+        border-color .35s;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.libro:hover {
+    transform: translateY(-8px);
+
+    border-color: #1680ff;
+
+    box-shadow:
+        0 18px 40px rgba(0,80,180,.25),
+        0 0 20px rgba(0,100,255,.12);
+}
+
+
+/* PORTADA */
+
+.portada {
+    width: 100%;
+
+    height: 330px;
+
+    overflow: hidden;
+
+    background: #03070c;
+}
+
+.portada img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .5s;
+}
+
+.libro:hover .portada img {
+    transform: scale(1.05);
+}
+
+
+/* INFORMACIÓN */
+
+.informacion {
+    padding: 22px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+}
+
+.informacion h3 {
+    color: #ffffff;
+
+    font-size: 21px;
+
+    margin-bottom: 5px;
+}
+
+.autor {
+    color: #1680ff;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.linea {
+    width: 45px;
+
+    height: 2px;
+
+    margin: 13px 0;
+
+    background: #1680ff;
+
+    box-shadow:
+        0 0 8px #1680ff;
+}
+
+.informacion > p:not(.autor) {
+    color: #9aaabd;
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   VALORACIÓN
+========================================================= */
+
+.zona-valoracion {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: auto;
+
+    margin-bottom: 15px;
+}
+
+.estrellas {
+    color: #1680ff;
+
+    letter-spacing: 2px;
+
+    font-size: 17px;
+
+    text-shadow:
+        0 0 7px rgba(22,128,255,.4);
+}
+
+.boton-valorar {
+    border: 1px solid #24517f;
+
+    background: transparent;
+
+    color: #b8c7d8;
+
+    padding: 7px 10px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    transition: .3s;
+}
+
+.boton-valorar:hover {
+    background: #1680ff;
+
+    border-color: #1680ff;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   ACCIONES
+========================================================= */
+
+.acciones-libro,
+.acciones-novelas {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.boton-libro {
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 10px;
+
+    background: #10243b;
+
+    border: 1px solid #24517f;
+
+    color: #dceaff;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    transition: .3s;
+}
+
+.boton-libro:hover {
+    background: #1680ff;
+
+    border-color: #1680ff;
+
+    color: #ffffff;
+}
+
+
+/* FAVORITO */
+
+.favorito {
+    width: 42px;
+
+    height: 40px;
+
+    border: 1px solid #24517f;
+
+    background: #091321;
+
+    color: #8ca3bd;
+
+    border-radius: 7px;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.favorito:hover,
+.favorito.activo {
+    color: #1680ff;
+
+    border-color: #1680ff;
+
+    box-shadow:
+        0 0 12px rgba(22,128,255,.25);
+}
+
+
+/* =========================================================
+   FRASE
+========================================================= */
+
+.frase {
+    padding: 90px 20px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,80,180,.14),
+            transparent 45%
+        ),
+        #050911;
+}
+
+.icono-libro {
+    font-size: 55px;
+
+    margin-bottom: 20px;
+
+    filter:
+        drop-shadow(0 0 12px #1680ff);
+}
+
+.frase > p:first-of-type {
+    color: #ffffff;
+
+    font-size: 30px;
+
+    font-weight: bold;
+}
+
+.separador {
+    width: 80px;
+
+    height: 2px;
+
+    background: #1680ff;
+
+    margin: 25px auto;
+
+    box-shadow:
+        0 0 12px #1680ff;
+}
+
+.cita {
+    color: #8799ae;
+
+    font-size: 15px;
+}
+
+.cita small {
+    color: #1680ff;
+}
+
+
+/* =========================================================
+   CONTACTO
+========================================================= */
+
+.contacto {
+    padding: 85px 6%;
+
+    background: #080e17;
+}
+
+.contacto-contenido {
+    max-width: 1200px;
+
+    margin: 40px auto 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+}
+
+.datos-contacto {
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0d1724,
+            #070c13
+        );
+
+    border: 1px solid #1c426a;
+
+    border-radius: 15px;
+}
+
+.datos-contacto h3 {
+    color: #ffffff;
+
+    margin-bottom: 15px;
+}
+
+.datos-contacto > p {
+    color: #9aaabd;
+
+    margin-bottom: 25px;
+}
+
+.dato {
+    margin-bottom: 18px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #15283d;
+}
+
+.dato strong {
+    color: #1680ff;
+}
+
+.dato p {
+    color: #9aaabd;
+
+    margin-top: 3px;
+}
+
+.indicacion {
+    color: #1680ff !important;
+
+    font-size: 13px;
+}
+
+
+/* MAPA */
+
+.mapa {
+    min-height: 400px;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    border: 1px solid #1c426a;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.45);
+}
+
+.mapa iframe {
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 400px;
+
+    border: 0;
+
+    display: block;
+}
+
+
+/* =========================================================
+   MODAL RECOMENDACIONES
+========================================================= */
+
+.ventana-recomendaciones {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 4, 10, .82);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 3000;
+
+    backdrop-filter: blur(5px);
+}
+
+.ventana-recomendaciones.mostrar {
+    display: flex;
+}
+
+.contenido-recomendaciones {
+    width: min(1000px, 100%);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0c1624,
+            #050a11
+        );
+
+    border: 1px solid #1680ff;
+
+    border-radius: 18px;
+
+    padding: 45px;
+
+    box-shadow:
+        0 0 40px rgba(0,100,255,.20);
+}
+
+.cerrar {
+    position: absolute;
+
+    right: 20px;
+    top: 12px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #8ea4bd;
+
+    font-size: 32px;
+
+    cursor: pointer;
+}
+
+.cerrar:hover {
+    color: #1680ff;
+}
+
+.contenido-recomendaciones h2 {
+    text-align: center;
+
+    color: #ffffff;
+
+    margin-bottom: 8px;
+}
+
+.texto-recomendaciones {
+    text-align: center;
+
+    color: #8ea0b5;
+
+    margin-bottom: 30px;
+}
+
+.recomendaciones-libros {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.recomendacion {
+    padding: 18px;
+
+    text-align: center;
+
+    background: #091321;
+
+    border: 1px solid #1b3d61;
+
+    border-radius: 12px;
+
+    transition: .3s;
+}
+
+.recomendacion:hover {
+    border-color: #1680ff;
+
+    transform: translateY(-5px);
+}
+
+.portada-recomendacion {
+    height: 130px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #07101c;
+
+    font-size: 55px;
+
+    margin-bottom: 14px;
+}
+
+.recomendacion h3 {
+    color: #ffffff;
+
+    font-size: 16px;
+}
+
+.recomendacion p {
+    color: #8496ab;
+
+    font-size: 13px;
+
+    margin: 5px 0;
+}
+
+.recomendacion span {
+    color: #1680ff;
+}
+
+
+/* =========================================================
+   FORMULARIOS
+========================================================= */
+
+.formulario-pagina {
+    min-height: calc(100vh - 75px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 60px 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0,102,255,.17),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #050911,
+            #091321,
+            #050911
+        );
+}
+
+.formulario-contenedor {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 430px;
+
+    padding: 35px 35px 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0b1421,
+            #050a12
+        );
+
+    border: 1px solid #1680ff;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow:
+        0 0 25px rgba(0,102,255,.20),
+        0 20px 60px rgba(0,0,0,.75);
+}
+
+.formulario-contenedor::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 20%;
+
+    right: 20%;
+
+    height: 2px;
+
+    background: #1680ff;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 10px #1680ff,
+        0 0 25px #1680ff;
+}
+
+
+/* ICONO */
+
+.formulario-icono {
+    font-size: 48px;
+
+    margin-bottom: 12px;
+
+    filter:
+        drop-shadow(0 0 8px #1680ff)
+        drop-shadow(0 0 18px rgba(0,110,255,.6));
+}
+
+
+/* TÍTULO */
+
+.formulario-contenedor h1 {
+    margin: 0 0 8px;
+
+    font-size: 32px;
+
+    color: #ffffff;
+}
+
+.formulario-contenedor h1 span {
+    color: #1680ff;
+}
+
+
+/* SUBTÍTULO */
+
+.formulario-subtitulo {
+    color: #9eacc0;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+/* CAMPOS */
+
+.campo {
+    text-align: left;
+
+    margin-bottom: 17px;
+}
+
+.campo label {
+    display: block;
+
+    color: #e8edf5;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+.campo input {
+    width: 100%;
+
+    height: 46px;
+
+    padding: 0 13px;
+
+    background: #09111d !important;
+
+    color: #ffffff !important;
+
+    border: 1px solid #24476f !important;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: .3s;
+}
+
+.campo input::placeholder {
+    color: #65758b;
+}
+
+.campo input:focus {
+    border-color: #1680ff !important;
+
+    box-shadow:
+        0 0 12px rgba(0,110,255,.30);
+}
+
+
+/* BOTÓN */
+
+.boton-formulario {
+    width: 100%;
+
+    height: 46px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1680ff,
+            #0052d9
+        );
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 20px rgba(0,100,255,.30);
+
+    transition: .3s;
+}
+
+.boton-formulario:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgba(0,110,255,.50);
+}
+
+
+/* TEXTO */
+
+.formulario-pie {
+    color: #aebbd0;
+
+    margin-top: 20px;
+
+    font-size: 13px;
+}
+
+.formulario-pie a {
+    color: #1680ff;
+
+    font-weight: bold;
+}
+
+.formulario-pie a:hover {
+    color: #5aa7ff;
+
+    text-decoration: underline;
+}
+
+
+/* VOLVER */
+
+.formulario-contenedor .volver {
+    display: inline-block;
+
+    margin-top: 17px;
+
+    color: #1680ff;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.formulario-contenedor .volver:hover {
+    color: #5aa7ff;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+body > footer {
+    background: #03070d;
+
+    border-top: 1px solid #163252;
+
+    color: #718097;
+
+    text-align: center;
+
+    padding: 20px;
+
+    font-size: 12px;
+}
+
+body > footer span {
+    color: #1680ff;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .encabezado {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+
+    .encabezado nav {
+        gap: 14px;
+    }
+
+    .hero {
+        padding: 65px 6%;
+    }
+
+    .contenedor-libros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .recomendaciones-libros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================================
+   TELÉFONO
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .encabezado {
+        position: relative;
+
+        flex-direction: column;
+
+        padding: 15px;
+
+        gap: 12px;
+    }
+
+    .logo {
+        justify-content: center;
+
+        font-size: 18px;
+
+        white-space: normal;
+
+        text-align: center;
+    }
+
+    .encabezado nav {
+        width: 100%;
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 8px 13px;
+    }
+
+    .encabezado nav > a,
+    .boton-ajustes {
+        font-size: 12px;
+    }
+
+
+    /* AJUSTES */
+
+    .opciones-ajustes {
+        position: fixed;
+
+        left: 50%;
+
+        right: auto;
+
+        transform: translateX(-50%);
+
+        top: 125px;
+
+        width: 210px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: auto;
+
+        padding: 60px 20px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 25px;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .descripcion {
+        font-size: 15px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-imagen {
+        min-height: 230px;
+    }
+
+    .mando {
+        transform: scale(.78);
+    }
+
+    .mando:hover {
+        transform: scale(.80);
+    }
+
+
+    /* SECCIÓN */
+
+    .seccion-libros {
+        padding: 60px 15px;
+    }
+
+    .titulo-seccion > span {
+        display: none;
+    }
+
+    .titulo-seccion h2 {
+        margin: 0;
+
+        font-size: 29px;
+    }
+
+
+    /* BUSCADOR */
+
+    .buscador {
+        height: 48px;
+
+        margin-bottom: 35px;
+    }
+
+    .buscador input {
+        font-size: 14px;
+    }
+
+
+    /* TARJETAS */
+
+    .contenedor-libros {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+    .portada {
+        height: 310px;
+    }
+
+    .informacion {
+        padding: 20px;
+    }
+
+
+    /* FRASE */
+
+    .frase {
+        padding: 60px 20px;
+    }
+
+    .frase > p:first-of-type {
+        font-size: 24px;
+    }
+
+
+    /* CONTACTO */
+
+    .contacto {
+        padding: 60px 15px;
+    }
+
+    .contacto-contenido {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+    .mapa,
+    .mapa iframe {
+        min-height: 300px;
+
+        height: 300px;
+    }
+
+
+    /* MODAL */
+
+    .contenido-recomendaciones {
+        padding: 40px 18px 25px;
+    }
+
+    .recomendaciones-libros {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* FORMULARIOS */
+
+    .formulario-pagina {
+        padding: 35px 15px;
+    }
+
+    .formulario-contenedor {
+        padding: 30px 22px 25px;
+    }
+
+    .formulario-contenedor h1 {
+        font-size: 29px;
+    }
+
+}
+
+
+/* =========================================================
+   TELÉFONOS PEQUEÑOS
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .encabezado nav {
+        gap: 7px 9px;
+    }
+
+    .encabezado nav > a,
+    .boton-ajustes {
+        font-size: 11px;
+    }
+
+    .mando {
+        transform: scale(.65);
+    }
+
+}
+
+/* ========================================
+   MENÚ DE NAVEGACIÓN
+========================================= */
+
+.menu-principal {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 25px;
+}
+
+.menu-principal a,
+.boton-nav {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: 0.3s ease;
+}
+
+.menu-principal a:hover,
+.boton-nav:hover {
+    color: #00aaff;
+}
+
+
+/* ========================================
+   AJUSTES
+========================================= */
+
+.contenedor-ajustes {
+    position: relative;
+}
+
+.boton-ajustes {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #00aaff;
+    border-radius: 5px;
+    padding: 7px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.boton-ajustes:hover {
+    background: #00aaff;
+    color: #ffffff;
+}
+
+
+/* ========================================
+   MENÚ DESPLEGABLE DE AJUSTES
+========================================= */
+
+.menu-ajustes {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+
+    width: 190px;
+
+    background: #0b1118;
+
+    border: 1px solid #00aaff;
+    border-radius: 10px;
+
+    box-shadow: 0 10px 30px rgba(0, 170, 255, 0.25);
+
+    padding: 8px;
+
+    display: none;
+
+    flex-direction: column;
+
+    z-index: 5000;
+}
+
+.menu-ajustes.mostrar {
+    display: flex;
+}
+
+.menu-ajustes a {
+    display: block;
+
+    padding: 11px 13px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    transition: 0.3s ease;
+}
+
+.menu-ajustes a:hover {
+    background: #00aaff;
+    color: #ffffff;
+}
+
+
+/* ========================================
+   MODAL DE RECOMENDACIONES
+========================================= */
+
+.modal-recomendaciones {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.78);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    z-index: 10000;
+
+    backdrop-filter: blur(5px);
+}
+
+
+/* Cuando JavaScript agrega esta clase */
+
+.modal-recomendaciones.mostrar {
+    display: flex;
+}
+
+
+/* ========================================
+   CONTENIDO DEL MODAL
+========================================= */
+
+.contenido-recomendaciones {
+    position: relative;
+
+    width: min(1000px, 95vw);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111920,
+            #080d12
+        );
+
+    border: 2px solid #20bfff;
+
+    border-radius: 16px;
+
+    padding: 35px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 0 30px rgba(0, 174, 255, 0.25),
+        0 0 70px rgba(0, 174, 255, 0.12);
+
+    animation: aparecerModal 0.3s ease;
+}
+
+
+@keyframes aparecerModal {
+
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* ========================================
+   BOTÓN CERRAR
+========================================= */
+
+.cerrar-recomendaciones {
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    line-height: 1;
+
+    transition: 0.3s ease;
+}
+
+.cerrar-recomendaciones:hover {
+    color: #00bfff;
+
+    transform: rotate(90deg);
+}
+
+
+/* ========================================
+   TÍTULO RECOMENDACIONES
+========================================= */
+
+.titulo-recomendaciones {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.titulo-recomendaciones h2 {
+    margin: 0 0 8px;
+
+    color: #4dc9ff;
+
+    font-size: 32px;
+}
+
+.titulo-recomendaciones p {
+    margin: 0;
+
+    color: #b9c2c9;
+
+    font-size: 16px;
+}
+
+
+/* ========================================
+   GRID
+========================================= */
+
+.recomendaciones-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+/* ========================================
+   TARJETAS
+========================================= */
+
+.tarjeta-recomendacion {
+    background: #101a21;
+
+    border: 1px solid #148fc0;
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.tarjeta-recomendacion:hover {
+    transform: translateY(-6px);
+
+    border-color: #35c8ff;
+
+    box-shadow:
+        0 10px 25px rgba(0, 174, 255, 0.2);
+}
+
+
+/* ========================================
+   IMÁGENES
+========================================= */
+
+.tarjeta-recomendacion img {
+    width: 100%;
+
+    height: 230px;
+
+    object-fit: cover;
+
+    border-radius: 7px;
+
+    display: block;
+
+    margin-bottom: 15px;
+}
+
+
+/* ========================================
+   TEXTO
+========================================= */
+
+.tarjeta-recomendacion h3 {
+    color: #ffffff;
+
+    font-size: 18px;
+
+    margin: 10px 0 7px;
+}
+
+.tarjeta-recomendacion p {
+    color: #aeb8bf;
+
+    margin: 0 0 10px;
+}
+
+
+/* ========================================
+   ESTRELLAS
+========================================= */
+
+.estrellas-recomendacion {
+    color: #25bfff;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 13px;
+}
+
+
+/* ========================================
+   BOTÓN VER VIDEOJUEGO
+========================================= */
+
+.tarjeta-recomendacion a {
+    display: inline-block;
+
+    background: #008fe0;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    padding: 8px 13px;
+
+    border-radius: 6px;
+
+    font-size: 13px;
+
+    transition: 0.3s ease;
+}
+
+.tarjeta-recomendacion a:hover {
+    background: #00bfff;
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+    .recomendaciones-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .contenido-recomendaciones {
+        padding: 25px;
+    }
+
+    .titulo-recomendaciones h2 {
+        font-size: 27px;
+    }
+
+}
+
+
+/* ========================================
+   RESPONSIVE - TELÉFONO
+========================================= */
+
+@media (max-width: 600px) {
+
+    .menu-principal {
+        flex-direction: column;
+
+        gap: 10px;
+
+        align-items: stretch;
+    }
+
+
+    .contenedor-ajustes {
+        width: 100%;
+    }
+
+
+    .boton-ajustes {
+        width: 100%;
+    }
+
+
+    .menu-ajustes {
+        position: static;
+
+        width: 100%;
+
+        margin-top: 8px;
+
+        box-sizing: border-box;
+    }
+
+
+    .modal-recomendaciones {
+        padding: 10px;
+    }
+
+
+    .contenido-recomendaciones {
+        width: 100%;
+
+        max-height: 92vh;
+
+        padding: 20px 15px;
+    }
+
+
+    .titulo-recomendaciones {
+        padding-top: 15px;
+    }
+
+
+    .titulo-recomendaciones h2 {
+        font-size: 23px;
+    }
+
+
+    .titulo-recomendaciones p {
+        font-size: 14px;
+    }
+
+
+    .recomendaciones-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .tarjeta-recomendacion img {
+        height: 220px;
+    }
+
+}
+
+/* =====================================================
+   CORRECCIONES - MUNDO DE VIDEOJUEGOS
+===================================================== */
+
+
+/* =====================================================
+   AJUSTES
+===================================================== */
+
+.menu-ajustes {
+    position: relative;
+    display: inline-block;
+}
+
+
+.boton-ajustes {
+    background: #ffffff;
+    color: #111111;
+    border: 1px solid #267da3;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+
+.boton-ajustes:hover {
+    background: #00aaff;
+    color: white;
+}
+
+
+.opciones-ajustes {
+    display: none;
+
+    position: absolute;
+
+    top: calc(100% + 8px);
+    right: 0;
+
+    width: 190px;
+
+    background: #0d141a;
+
+    border: 1px solid #267da3;
+
+    border-radius: 10px;
+
+    padding: 8px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+    z-index: 9999;
+}
+
+
+.opciones-ajustes.mostrar {
+    display: block;
+}
+
+
+.opciones-ajustes a {
+    display: block;
+
+    padding: 11px 12px;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    transition: 0.3s ease;
+
+    white-space: nowrap;
+}
+
+
+.opciones-ajustes a:hover {
+    background: #087eb5;
+    color: white;
+}
+
+
+
+/* =====================================================
+   PERFIL DEL USUARIO
+===================================================== */
+
+.usuario-menu {
+    display: none;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: white;
+
+    text-decoration: none;
+}
+
+
+.usuario-menu img {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 2px solid #00aaff;
+}
+
+
+.usuario-menu span {
+    color: white;
+    font-weight: bold;
+}
+
+
+
+/* =====================================================
+   VIDEOJUEGOS
+===================================================== */
+
+.seccion-videojuegos {
+    padding: 70px 5%;
+}
+
+
+.contenedor-videojuegos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 25px;
+
+    max-width: 1200px;
+
+    margin: 40px auto;
+}
+
+
+.videojuego {
+    background:
+        linear-gradient(
+            145deg,
+            #11161a,
+            #090b0d
+        );
+
+    border: 1px solid #267da3;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+.videojuego:hover {
+    transform: translateY(-8px);
+
+    border-color: #00aaff;
+
+    box-shadow:
+        0 15px 35px
+        rgba(0, 170, 255, 0.25);
+}
+
+
+.portada {
+    width: 100%;
+    height: 260px;
+
+    overflow: hidden;
+
+    background: #0b1115;
+}
+
+
+.portada img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.4s ease;
+}
+
+
+.videojuego:hover .portada img {
+    transform: scale(1.05);
+}
+
+
+.informacion {
+    padding: 20px;
+}
+
+
+.informacion h3 {
+    color: white;
+
+    font-size: 22px;
+
+    margin: 0 0 8px;
+}
+
+
+.autor {
+    color: #55cfff;
+
+    margin-bottom: 12px;
+}
+
+
+.linea {
+    width: 100%;
+
+    height: 1px;
+
+    background: #267da3;
+
+    margin: 12px 0;
+}
+
+
+.informacion > p:not(.autor) {
+    color: #cccccc;
+
+    line-height: 1.6;
+
+    min-height: 75px;
+}
+
+
+
+/* =====================================================
+   VALORACIÓN
+===================================================== */
+
+.zona-valoracion {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+
+.estrellas {
+    color: #00aaff;
+
+    font-size: 18px;
+
+    letter-spacing: 2px;
+}
+
+
+.boton-valorar {
+    background: transparent;
+
+    color: #55cfff;
+
+    border: 1px solid #267da3;
+
+    border-radius: 6px;
+
+    padding: 6px 10px;
+
+    cursor: pointer;
+}
+
+
+.boton-valorar:hover {
+    background: #267da3;
+
+    color: white;
+}
+
+
+
+/* =====================================================
+   ACCIONES
+===================================================== */
+
+.acciones-videojuego {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+
+.boton-videojuego {
+    flex: 1;
+
+    text-align: center;
+
+    background: #087eb5;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 10px;
+
+    border-radius: 7px;
+
+    transition: 0.3s ease;
+}
+
+
+.boton-videojuego:hover {
+    background: #00aaff;
+
+    transform: translateY(-2px);
+}
+
+
+.favorito {
+    width: 45px;
+    height: 42px;
+
+    border: 1px solid #267da3;
+
+    background: transparent;
+
+    color: #00aaff;
+
+    border-radius: 7px;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.favorito:hover {
+    background: #e91e63;
+
+    color: white;
+
+    border-color: #e91e63;
+}
+
+
+.favorito.activo {
+    background: #e91e63;
+
+    color: white;
+
+    border-color: #e91e63;
+}
+
+
+
+/* =====================================================
+   MODAL RECOMENDACIONES
+===================================================== */
+
+.ventana-recomendaciones {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        rgba(0, 0, 0, 0.82);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    z-index: 10000;
+}
+
+
+.ventana-recomendaciones.mostrar {
+    display: flex;
+}
+
+
+.contenido-recomendaciones {
+    position: relative;
+
+    width: min(1000px, 100%);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101820,
+            #080d11
+        );
+
+    border: 2px solid #28bfff;
+
+    border-radius: 16px;
+
+    padding: 40px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 0 35px
+        rgba(0, 174, 255, 0.3);
+
+    animation: aparecerModal 0.3s ease;
+}
+
+
+@keyframes aparecerModal {
+
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+.contenido-recomendaciones h2 {
+    text-align: center;
+
+    color: #55cfff;
+
+    font-size: 32px;
+
+    margin: 0 0 10px;
+}
+
+
+.texto-recomendaciones {
+    text-align: center;
+
+    color: #bbbbbb;
+
+    margin-bottom: 30px;
+}
+
+
+.cerrar {
+    position: absolute;
+
+    top: 12px;
+    right: 18px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 34px;
+
+    cursor: pointer;
+
+    line-height: 1;
+}
+
+
+.cerrar:hover {
+    color: #00aaff;
+}
+
+
+.recomendaciones-videojuegos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.recomendacion {
+    background: #101a21;
+
+    border: 1px solid #267da3;
+
+    border-radius: 10px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+
+.recomendacion:hover {
+    transform: translateY(-5px);
+
+    border-color: #00aaff;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 170, 255, 0.2);
+}
+
+
+.portada-recomendacion {
+    height: 170px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #17242c,
+            #0b1115
+        );
+
+    border-radius: 7px;
+
+    font-size: 70px;
+
+    margin-bottom: 15px;
+}
+
+
+.recomendacion h3 {
+    color: white;
+
+    font-size: 18px;
+
+    margin: 10px 0;
+}
+
+
+.recomendacion p {
+    color: #aaaaaa;
+
+    margin: 5px 0 12px;
+}
+
+
+.recomendacion span {
+    color: #35c6ff;
+
+    letter-spacing: 2px;
+}
+
+
+
+/* =====================================================
+   RESPONSIVE - TELÉFONOS
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .encabezado {
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 15px;
+    }
+
+
+    .navegacion {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+    }
+
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 60px 20px;
+    }
+
+
+    .hero-imagen {
+        margin-top: 30px;
+    }
+
+
+    .recomendaciones-videojuegos {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .logo {
+        font-size: 20px;
+    }
+
+
+    .navegacion {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .navegacion > a {
+        text-align: center;
+
+        padding: 8px;
+    }
+
+
+    .menu-ajustes {
+        width: 100%;
+    }
+
+
+    .boton-ajustes {
+        width: 100%;
+    }
+
+
+    .opciones-ajustes {
+        position: static;
+
+        width: 100%;
+
+        margin-top: 8px;
+
+        box-sizing: border-box;
+    }
+
+
+    .hero-texto h1 {
+        font-size: 42px;
+    }
+
+
+    .contenedor-videojuegos {
+        grid-template-columns: 1fr;
+    }
+
+
+    .contenido-recomendaciones {
+        padding: 30px 18px;
+
+        max-height: 92vh;
+    }
+
+
+    .contenido-recomendaciones h2 {
+        font-size: 25px;
+
+        padding-right: 20px;
+    }
+
+
+    .recomendaciones-videojuegos {
+        grid-template-columns: 1fr;
+    }
+
+
+    .portada-recomendacion {
+        height: 150px;
+    }
+
+
+    .acciones-videojuego {
+        flex-direction: column;
+    }
+
+
+    .boton-videojuego {
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    .favorito {
+        width: 100%;
+    }
+
+}
+
+/* =====================================================
+   CORRECCIONES - MUNDO DE VIDEOJUEGOS
+===================================================== */
+
+
+/* =====================================================
+   MENÚ AJUSTES
+===================================================== */
+
+.menu-ajustes {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+.boton-ajustes {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #168cff;
+    border-radius: 8px;
+    padding: 9px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
+
+
+.boton-ajustes:hover {
+    background: #168cff;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(22, 140, 255, 0.5);
+}
+
+
+/* Barra que aparece debajo de Ajustes */
+
+.opciones-ajustes {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+
+    width: 190px;
+
+    background: #0b1119;
+
+    border: 1px solid #168cff;
+
+    border-radius: 10px;
+
+    padding: 8px;
+
+    display: none;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+
+.opciones-ajustes.mostrar {
+    display: flex;
+}
+
+
+.opciones-ajustes a {
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px 12px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    transition: 0.25s ease;
+}
+
+
+.opciones-ajustes a:hover {
+    background: #168cff;
+
+    color: #ffffff;
+
+    padding-left: 16px;
+}
+
+
+/* =====================================================
+   USUARIO
+===================================================== */
+
+.usuario-menu {
+    display: none;
+
+    align-items: center;
+
+    gap: 8px;
+
+    text-decoration: none;
+
+    color: #ffffff;
+
+    font-weight: 600;
+}
+
+
+.usuario-menu img {
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 2px solid #168cff;
+}
+
+
+#nombreMenu {
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   MODAL RECOMENDACIONES
+===================================================== */
+
+.ventana-recomendaciones {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.82);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 10000;
+}
+
+
+.ventana-recomendaciones.mostrar {
+    display: flex;
+}
+
+
+.contenido-recomendaciones {
+    position: relative;
+
+    width: min(1000px, 95vw);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0d151d,
+            #080c11
+        );
+
+    border: 2px solid #20b9ff;
+
+    border-radius: 18px;
+
+    padding: 35px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 0 30px rgba(32, 185, 255, 0.25);
+}
+
+
+.contenido-recomendaciones h2 {
+    text-align: center;
+
+    color: #45c8ff;
+
+    font-size: 30px;
+
+    margin: 0 0 8px;
+}
+
+
+.texto-recomendaciones {
+    text-align: center;
+
+    color: #b8c1ca;
+
+    margin-bottom: 28px;
+}
+
+
+.cerrar {
+    position: absolute;
+
+    top: 12px;
+
+    right: 18px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 32px;
+
+    cursor: pointer;
+
+    line-height: 1;
+}
+
+
+.cerrar:hover {
+    color: #20b9ff;
+}
+
+
+/* =====================================================
+   RECOMENDACIONES
+===================================================== */
+
+.recomendaciones-libros {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.recomendacion {
+    background: #101b23;
+
+    border: 1px solid #168cff;
+
+    border-radius: 10px;
+
+    padding: 14px;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+
+.recomendacion:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 0 18px rgba(22, 140, 255, 0.25);
+}
+
+
+.portada-recomendacion {
+    height: 150px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #0a1117;
+
+    border-radius: 8px;
+
+    font-size: 65px;
+
+    margin-bottom: 15px;
+}
+
+
+.recomendacion h3 {
+    color: #ffffff;
+
+    font-size: 18px;
+
+    margin: 8px 0;
+}
+
+
+.recomendacion p {
+    color: #aeb7c0;
+
+    margin: 5px 0 10px;
+}
+
+
+.recomendacion span {
+    color: #20b9ff;
+
+    font-size: 18px;
+}
+
+
+/* =====================================================
+   FAVORITOS
+===================================================== */
+
+.favorito-activo {
+    color: #ff4d6d !important;
+}
+
+
+.lista-favoritos {
+    width: min(1000px, 92%);
+
+    margin: 30px auto;
+
+    display: grid;
+
+    gap: 20px;
+}
+
+
+.favorito-tarjeta {
+    display: flex;
+
+    gap: 20px;
+
+    align-items: center;
+
+    background: #101820;
+
+    border: 1px solid #168cff;
+
+    border-radius: 12px;
+
+    padding: 15px;
+}
+
+
+.favorito-tarjeta img {
+    width: 150px;
+
+    height: 100px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+
+.favorito-tarjeta h3 {
+    color: #ffffff;
+
+    margin: 0 0 8px;
+}
+
+
+.favorito-tarjeta p {
+    color: #aeb7c0;
+
+    margin-bottom: 12px;
+}
+
+
+.quitar-favorito {
+    margin-left: 8px;
+
+    padding: 9px 12px;
+
+    border: 1px solid #ff4d6d;
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #ff4d6d;
+
+    cursor: pointer;
+}
+
+
+.quitar-favorito:hover {
+    background: #ff4d6d;
+
+    color: #ffffff;
+}
+
+
+.sin-favoritos {
+    text-align: center;
+
+    padding: 60px 20px;
+
+    color: #ffffff;
+}
+
+
+.icono-sin-favoritos {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =====================================================
+   DETALLES
+===================================================== */
+
+.boton-favorito-detalle.favorito-activo {
+    border-color: #ff4d6d;
+
+    color: #ff4d6d;
+}
+
+
+/* =====================================================
+   RESPONSIVE - TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .recomendaciones-libros {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .encabezado {
+        padding: 12px 20px;
+    }
+
+
+    .encabezado nav {
+        gap: 10px;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - TELEFONO
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .encabezado {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 12px;
+
+        padding: 14px;
+    }
+
+
+    .logo {
+        justify-content: center;
+
+        text-align: center;
+    }
+
+
+    .encabezado nav {
+        width: 100%;
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 7px;
+    }
+
+
+    .encabezado nav a {
+        font-size: 13px;
+
+        padding: 7px 8px;
+    }
+
+
+    .boton-ajustes {
+        font-size: 13px;
+
+        padding: 8px 10px;
+    }
+
+
+    .opciones-ajustes {
+        position: fixed;
+
+        top: auto;
+
+        right: 10px;
+
+        margin-top: 0;
+
+        width: 190px;
+    }
+
+
+    .contenido-recomendaciones {
+        width: 96vw;
+
+        padding: 28px 15px 20px;
+
+        max-height: 92vh;
+    }
+
+
+    .contenido-recomendaciones h2 {
+        font-size: 23px;
+
+        padding: 0 25px;
+    }
+
+
+    .recomendaciones-libros {
+        grid-template-columns: 1fr;
+    }
+
+
+    .portada-recomendacion {
+        height: 130px;
+    }
+
+
+    .favorito-tarjeta {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .favorito-tarjeta img {
+        width: 100%;
+
+        max-width: 250px;
+
+        height: 160px;
+    }
+
+
+    .quitar-favorito {
+        margin: 10px 0 0;
+    }
+
+}
+
+
+/* =====================================================
+   TELEFONOS MUY PEQUEÑOS
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .logo {
+        font-size: 17px;
+    }
+
+
+    .encabezado nav a {
+        font-size: 12px;
+    }
+
+
+    .boton-ajustes {
+        font-size: 12px;
+    }
+
+
+    .contenido-recomendaciones h2 {
+        font-size: 20px;
+    }
+
+}
+
+/* =========================================================
+   CORRECCIÓN FINAL
+   MUNDO DE VIDEOJUEGOS
+========================================================= */
+
+
+/* =========================================================
+   ENCABEZADO
+========================================================= */
+
+.encabezado {
+    width: 100%;
+    min-height: 65px;
+
+    padding: 10px 4%;
+
+    background: #030811;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom: 1px solid #163252;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #ffffff;
+
+    font-size: 20px;
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+.logo strong {
+    color: #1680ff;
+
+    text-shadow:
+        0 0 10px rgba(22, 128, 255, 0.45);
+}
+
+
+/* =========================================================
+   NAVEGACIÓN
+========================================================= */
+
+.encabezado nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 22px;
+}
+
+.encabezado nav a {
+    color: #dce5f0;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.encabezado nav a:hover,
+.encabezado nav a.activo {
+    color: #1680ff;
+
+    text-shadow:
+        0 0 8px rgba(22, 128, 255, 0.45);
+}
+s
+
+/* =========================================================
+   USUARIO LOGUEADO
+========================================================= */
+
+.usuario-menu {
+    display: none;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.usuario-menu img {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 2px solid #168cff;
+
+    box-shadow:
+        0 0 12px rgba(22, 140, 255, 0.4);
+}
+
+#nombreMenu {
+    color: #ffffff;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   MODAL RECOMENDACIONES
+========================================================= */
+
+.ventana-recomendaciones {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.82);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    z-index: 10000;
+
+    backdrop-filter: blur(5px);
+}
+
+.ventana-recomendaciones.mostrar {
+    display: flex;
+}
+
+
+/* CONTENIDO */
+
+.contenido-recomendaciones {
+    position: relative;
+
+    width: min(1000px, 95vw);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 40px;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101820,
+            #080d12
+        );
+
+    border: 2px solid #20b9ff;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 35px rgba(0, 174, 255, 0.3);
+}
+
+
+/* BOTÓN CERRAR */
+
+.cerrar,
+.cerrar-recomendaciones {
+    position: absolute;
+
+    top: 12px;
+    right: 18px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.cerrar:hover,
+.cerrar-recomendaciones:hover {
+    color: #20b9ff;
+
+    transform: rotate(90deg);
+}
+
+
+/* TÍTULO */
+
+.contenido-recomendaciones h2 {
+    text-align: center;
+
+    color: #45c8ff;
+
+    font-size: 30px;
+
+    margin: 0 0 8px;
+}
+
+.texto-recomendaciones {
+    text-align: center;
+
+    color: #b8c1ca;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   TARJETAS DE RECOMENDACIONES
+========================================================= */
+
+.recomendaciones-libros,
+.recomendaciones-videojuegos {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.recomendacion {
+    background: #101b23;
+
+    border: 1px solid #168cff;
+
+    border-radius: 10px;
+
+    padding: 14px;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+.recomendacion:hover {
+    transform: translateY(-5px);
+
+    border-color: #20b9ff;
+
+    box-shadow:
+        0 0 18px rgba(22, 140, 255, 0.25);
+}
+
+.portada-recomendacion {
+    width: 100%;
+
+    height: 150px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #0a1117;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    margin-bottom: 15px;
+}
+
+.portada-recomendacion img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.recomendacion h3 {
+    color: #ffffff;
+
+    font-size: 18px;
+
+    margin: 8px 0;
+}
+
+.recomendacion p {
+    color: #aeb7c0;
+
+    font-size: 14px;
+
+    margin: 5px 0 10px;
+}
+
+.recomendacion span {
+    color: #20b9ff;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .encabezado {
+        padding: 12px 20px;
+    }
+
+    .encabezado nav {
+        gap: 10px;
+    }
+
+    .recomendaciones-libros,
+    .recomendaciones-videojuegos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .encabezado {
+        position: relative;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        padding: 14px;
+
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 18px;
+
+        white-space: normal;
+
+        text-align: center;
+
+        justify-content: center;
+    }
+
+    .encabezado nav {
+        width: 100%;
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 7px;
+    }
+
+    .encabezado nav a {
+        font-size: 12px;
+
+        padding: 6px 7px;
+    }
+
+    .contenedor-ajustes {
+        position: relative;
+    }
+
+    .boton-ajustes {
+        font-size: 12px;
+
+        padding: 8px 12px;
+    }
+
+    .opciones-ajustes {
+        position: absolute;
+
+        top: calc(100% + 8px);
+
+        right: 0;
+
+        width: 190px;
+    }
+
+    .contenido-recomendaciones {
+        width: 96vw;
+
+        max-height: 92vh;
+
+        padding: 30px 15px 20px;
+    }
+
+    .contenido-recomendaciones h2 {
+        font-size: 23px;
+
+        padding: 0 25px;
+    }
+
+    .recomendaciones-libros,
+    .recomendaciones-videojuegos {
+        grid-template-columns: 1fr;
+    }
+
+    .portada-recomendacion {
+        height: 160px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .encabezado nav a {
+        font-size: 11px;
+    }
+
+    .boton-ajustes {
+        font-size: 11px;
+    }
+
+}
+
+/* =====================================================
+   AJUSTES
+===================================================== */
+
+.menu-ajustes {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.boton-ajustes {
+    background: #ffffff;
+    color: #111111;
+    border: 1px solid #168cff;
+    border-radius: 7px;
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
+
+.boton-ajustes:hover {
+    background: #168cff;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(22, 140, 255, 0.5);
+}
+
+.opciones-ajustes {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+
+    width: 190px;
+
+    background: #0b1119;
+    border: 1px solid #168cff;
+    border-radius: 10px;
+
+    padding: 8px;
+
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.opciones-ajustes.mostrar {
+    display: flex;
+}
+
+.opciones-ajustes a {
+    display: block;
+    width: 100%;
+
+    padding: 11px 12px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    transition: 0.25s ease;
+}
+
+.opciones-ajustes a:hover {
+    background: #168cff;
+    color: #ffffff;
+    padding-left: 16px;
+}
+
+
+/* =====================================================
+   USUARIO
+===================================================== */
+
+.usuario-menu {
+    display: none;
+    align-items: center;
+    gap: 8px;
+
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.usuario-menu img {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 2px solid #168cff;
+
+    box-shadow:
+        0 0 12px rgba(22, 140, 255, 0.5);
+}
+
+#nombreMenu {
+    white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+
+    .menu-principal {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .menu-ajustes {
+        width: auto;
+    }
+
+    .boton-ajustes {
+        padding: 9px 14px;
+        font-size: 13px;
+    }
+
+    .opciones-ajustes {
+        right: 0;
+        width: 180px;
+    }
+
+}
+
+/* =====================================================
+   CORRECCIÓN DEFINITIVA DEL MENÚ AJUSTES
+===================================================== */
+
+header .menu-principal .menu-ajustes {
+    position: relative !important;
+
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+
+    box-shadow: none !important;
+}
+
+
+/* BOTÓN */
+
+header .menu-principal .menu-ajustes .boton-ajustes {
+    width: auto !important;
+    min-width: 0 !important;
+    height: auto !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: 0 !important;
+
+    padding: 10px 18px !important;
+
+    border: 1px solid #008cff !important;
+    border-radius: 8px !important;
+
+    background: #07101e !important;
+
+    color: white !important;
+
+    font-size: 14px !important;
+    font-weight: bold !important;
+
+    cursor: pointer !important;
+
+    box-shadow: none !important;
+}
+
+
+/* HOVER */
+
+header .menu-principal .menu-ajustes .boton-ajustes:hover {
+    background: #0b1d35 !important;
+
+    border-color: #00aaff !important;
+
+    box-shadow:
+        0 0 10px rgba(0, 140, 255, 0.5) !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   MENÚ DESPLEGABLE
+===================================================== */
+
+header .menu-principal .menu-ajustes .opciones-ajustes {
+    position: absolute !important;
+
+    top: calc(100% + 10px) !important;
+    right: 0 !important;
+
+    width: 190px !important;
+    height: auto !important;
+
+    display: none;
+
+    flex-direction: column !important;
+
+    margin: 0 !important;
+    padding: 8px !important;
+
+    background: #07101e !important;
+
+    border: 1px solid #008cff !important;
+    border-radius: 10px !important;
+
+    box-shadow:
+        0 0 15px rgba(0, 140, 255, 0.35) !important;
+
+    z-index: 9999 !important;
+}
+
+
+/* CUANDO SE ABRE */
+
+header .menu-principal .menu-ajustes .opciones-ajustes.mostrar {
+    display: flex !important;
+}
+
+
+/* ENLACES DEL MENÚ */
+
+header .menu-principal .menu-ajustes .opciones-ajustes a {
+    display: block !important;
+
+    width: auto !important;
+
+    margin: 0 !important;
+
+    padding: 11px 12px !important;
+
+    background: transparent !important;
+
+    border: none !important;
+    border-radius: 7px !important;
+
+    color: white !important;
+
+    text-decoration: none !important;
+
+    font-size: 14px !important;
+}
+
+
+/* HOVER DE LOS ENLACES */
+
+header .menu-principal .menu-ajustes .opciones-ajustes a:hover {
+    background: #0b2845 !important;
+
+    color: #4db8ff !important;
+}
+
+/* =====================================================
+   PÁGINA DE FAVORITOS
+===================================================== */
+
+.favoritos-pagina {
+
+    min-height: calc(100vh - 80px);
+
+    padding: 70px 30px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #071a3d 0%,
+            #020814 45%,
+            #01040a 100%
+        );
+
+}
+
+
+/* =====================================================
+   CONTENEDOR DE TARJETAS
+===================================================== */
+
+.lista-favoritos {
+
+    width: min(1150px, 100%);
+
+    margin: 45px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(330px, 1fr)
+        );
+
+    gap: 25px;
+
+}
+
+
+/* =====================================================
+   TARJETA FAVORITO
+===================================================== */
+
+.favorito-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 18px;
+
+    min-height: 210px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #11161a,
+            #090b0d
+        );
+
+    border: 1px solid #267da3;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 0 10px rgba(38, 125, 163, .15);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+
+}
+
+
+.favorito-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: #1680ff;
+
+    box-shadow:
+        0 0 15px rgba(22, 128, 255, .35),
+        0 0 30px rgba(22, 128, 255, .15);
+
+}
+
+
+/* =====================================================
+   IMAGEN
+===================================================== */
+
+.favorito-imagen {
+
+    width: 135px;
+
+    height: 175px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    border: 1px solid #267da3;
+
+}
+
+
+.favorito-imagen img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform .3s ease;
+
+}
+
+
+.favorito-card:hover
+.favorito-imagen img {
+
+    transform: scale(1.05);
+
+}
+
+
+/* =====================================================
+   INFORMACIÓN
+===================================================== */
+
+.favorito-info {
+
+    flex: 1;
+
+}
+
+
+.favorito-info h3 {
+
+    margin: 0 0 8px;
+
+    color: white;
+
+    font-size: 22px;
+
+}
+
+
+.favorito-estrellas {
+
+    margin-bottom: 15px;
+
+    color: #ffd84d;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* =====================================================
+   BOTÓN VER
+===================================================== */
+
+.boton-ver-favorito {
+
+    display: inline-block;
+
+    padding: 10px 15px;
+
+    margin-bottom: 10px;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #008cff,
+            #0055ff
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    transition: .25s;
+
+}
+
+
+.boton-ver-favorito:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 15px rgba(0, 140, 255, .6);
+
+}
+
+
+/* =====================================================
+   BOTÓN QUITAR
+===================================================== */
+
+.boton-eliminar-favorito {
+
+    display: block;
+
+    padding: 9px 13px;
+
+    border: 1px solid rgba(130, 160, 200, .35);
+
+    border-radius: 8px;
+
+    background: #07101e;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    transition: .25s;
+
+}
+
+
+.boton-eliminar-favorito:hover {
+
+    border-color: #1680ff;
+
+    box-shadow:
+        0 0 12px rgba(22, 128, 255, .35);
+
+}
+
+
+/* =====================================================
+   SIN FAVORITOS
+===================================================== */
+
+.sin-favoritos {
+
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #11161a,
+            #090b0d
+        );
+
+    border: 1px solid #267da3;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 20px rgba(38, 125, 163, .15);
+
+}
+
+
+.icono-vacio {
+
+    font-size: 65px;
+
+    color: #1680ff;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 0 15px #1680ff;
+
+}
+
+
+.sin-favoritos h2 {
+
+    color: white;
+
+    margin-bottom: 10px;
+
+}
+
+
+.sin-favoritos p {
+
+    color: #9db8d8;
+
+    margin-bottom: 25px;
+
+}
+
+
+.sin-favoritos a {
+
+    display: inline-block;
+
+    padding: 12px 20px;
+
+    border-radius: 9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #008cff,
+            #0055ff
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+}
+
+
+/* =====================================================
+   MÓVIL
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .favoritos-pagina {
+
+        padding: 45px 15px;
+
+    }
+
+
+    .lista-favoritos {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+    }
+
+
+    .favorito-card {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 20px;
+
+    }
+
+
+    .favorito-imagen {
+
+        width: 150px;
+
+        height: 195px;
+
+    }
+
+
+    .favorito-info {
+
+        width: 100%;
+
+    }
+
+
+    .boton-ver-favorito,
+    .boton-eliminar-favorito {
+
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+}
+
+/* =====================================================
+   ESTILOS PARA LA PÁGINA DE FAVORITOS
+===================================================== */
+
+.favoritos-pagina {
+    padding: 60px 5%;
+    min-height: calc(100vh - 160px);
+    background: #03070c;
+}
+
+.lista-favoritos {
+    width: min(1100px, 100%);
+    margin: 40px auto 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* Estado cuando no hay favoritos */
+.sin-favoritos {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    background: #07111c;
+    border: 1px solid #176f9e;
+    border-radius: 15px;
+}
+
+.icono-vacio {
+    font-size: 60px;
+    color: #00aaff;
+    margin-bottom: 15px;
+}
+
+.sin-favoritos h2 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.sin-favoritos p {
+    color: #8ea3b7;
+    margin-bottom: 25px;
+}
+
+.sin-favoritos a {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #008cff, #0055ff);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.sin-favoritos a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 140, 255, 0.5);
+}
+
+/* Tarjeta de juego en favoritos */
+.favorito-card {
+    background: linear-gradient(145deg, #101820, #060a0f);
+    border: 1px solid #176f9e;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.favorito-card:hover {
+    transform: translateY(-5px);
+    border-color: #00aaff;
+    box-shadow: 0 0 20px rgba(0, 140, 255, 0.25);
+}
+
+.favorito-imagen {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: #02050a;
+}
+
+.favorito-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.favorito-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.favorito-info h3 {
+    margin: 0 0 10px 0;
+    color: white;
+    font-size: 18px;
+}
+
+.favorito-estrellas {
+    color: #ffd84d;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.boton-ver-favorito {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #087fc1, #0055a5);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 10px;
+    transition: 0.25s;
+}
+
+.boton-ver-favorito:hover {
+    box-shadow: 0 0 12px rgba(0, 140, 255, 0.5);
+}
+
+.boton-eliminar-favorito {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid #ff4d75;
+    color: #ff4d75;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.boton-eliminar-favorito:hover {
+    background: #ff4d75;
+    color: white;
+    box-shadow: 0 0 12px rgba(255, 77, 117, 0.4);
+}
+
+/* =====================================================
+   ESTILOS PARA EL MODAL DE RECOMENDACIONES
+===================================================== */
+.modal-recomendaciones {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-recomendaciones.activo {
+    display: flex;
+}
+
+.contenido-modal {
+    position: relative;
+    background: #040911;
+    border: 2px solid #00aaff;
+    border-radius: 18px;
+    padding: 35px 30px;
+    max-width: 950px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0, 170, 255, 0.3);
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.cerrar-modal:hover {
+    color: #00aaff;
+}
+
+.contenido-modal h2 {
+    margin: 0 0 8px;
+    font-size: 28px;
+    color: #00aaff;
+}
+
+.subtitulo-modal {
+    margin: 0 0 30px;
+    color: #8fa3b8;
+    font-size: 15px;
+}
+
+.grid-recomendaciones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.tarjeta-rec {
+    background: #08121e;
+    border: 1px solid #103452;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.tarjeta-rec:hover {
+    transform: translateY(-4px);
+    border-color: #00aaff;
+}
+
+.portada-rec {
+    width: 100%;
+    height: 140px;
+    background: #02050a;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portada-rec img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tarjeta-rec h4 {
+    margin: 5px 0 3px;
+    font-size: 15px;
+    color: white;
+}
+
+.tarjeta-rec p {
+    margin: 0 0 8px;
+    font-size: 13px;
+    color: #7b93a7;
+}
+
+@media (max-width: 800px) {
+    .grid-recomendaciones {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-recomendaciones {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Mi Perfil - Mundo de Videojuegos</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+</head>
+
+
+<body class="pagina-perfil">
+
+
+<!-- =====================================================
+     ENCABEZADO
+===================================================== -->
+
+<header class="encabezado">
+
+    <div class="logo">
+        🎮
+        <span>
+            Mundo de <strong>Videojuegos</strong>
+        </span>
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Inicio
+        </a>
+
+        <a href="index.html#videojuegos">
+            Videojuegos
+        </a>
+
+        <a href="favoritos.html">
+            ♥ Favoritos
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     PERFIL
+===================================================== -->
+
+<main class="perfil-contenedor">
+
+
+    <section class="perfil-card">
+
+
+        <!-- LÍNEA AZUL SUPERIOR -->
+
+        <div class="perfil-linea"></div>
+
+
+
+        <!-- FOTO DE PERFIL -->
+
+        <div class="foto-perfil-contenedor">
+
+            <div class="brillo-foto"></div>
+
+            <img
+                id="fotoPerfil"
+                src=""
+                alt="Foto de perfil"
+            >
+
+        </div>
+
+
+
+        <!-- INPUT OCULTO PARA SELECCIONAR FOTO -->
+
+        <input
+            type="file"
+            id="inputFoto"
+            accept="image/*"
+            style="display: none;"
+        >
+
+
+
+        <!-- NOMBRE -->
+
+        <h1 id="nombrePerfil">
+            Rosmeri
+        </h1>
+
+
+        <!-- CORREO -->
+
+        <p
+            id="correoPerfil"
+            class="correo-perfil"
+        >
+            rosmeri@gmail.com
+        </p>
+
+
+
+        <!-- CAMBIAR FOTO -->
+
+        <button
+            type="button"
+            id="cambiarFoto"
+            class="boton-cambiar-foto"
+        >
+
+            📷
+            Cambiar foto de perfil
+
+        </button>
+
+
+
+        <!-- =================================================
+             ESTADÍSTICAS
+        ================================================== -->
+
+        <div class="estadisticas-perfil">
+
+
+            <!-- VIDEOJUEGOS FAVORITOS -->
+
+            <div class="estadistica">
+
+                <div class="icono-estadistica">
+                    🎮
+                </div>
+
+                <h3>
+                    Videojuegos favoritos
+                </h3>
+
+                <span id="cantidadFavoritos">
+                    0
+                </span>
+
+            </div>
+
+
+
+            <!-- VALORACIONES -->
+
+            <div class="estadistica">
+
+                <div class="icono-estadistica estrella">
+                    ★
+                </div>
+
+                <h3>
+                    Valoraciones realizadas
+                </h3>
+
+                <span id="cantidadValoraciones">
+                    0
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             BOTONES
+        ================================================== -->
+
+        <div class="acciones-perfil">
+
+
+            <a
+                href="favoritos.html"
+                class="boton-favoritos"
+            >
+
+                ♥
+                Ver mis favoritos
+
+            </a>
+
+
+
+            <button
+                type="button"
+                id="cerrarSesion"
+                class="boton-cerrar-sesion"
+            >
+
+                Cerrar sesión
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- VOLVER -->
+
+        <a
+            href="index.html"
+            class="volver-inicio"
+        >
+
+            ← Volver al inicio
+
+        </a>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     ESTILOS ESPECÍFICOS DEL PERFIL
+===================================================== -->
+
+<style>
+
+    /* =====================================================
+       FONDO
+    ===================================================== */
+
+    .pagina-perfil {
+
+        margin: 0;
+
+        min-height: 100vh;
+
+        background:
+            radial-gradient(
+                circle at top,
+                #071a3d 0%,
+                #020814 45%,
+                #01040a 100%
+            );
+
+        color: white;
+
+    }
+
+
+
+    /* =====================================================
+       CONTENEDOR
+    ===================================================== */
+
+    .perfil-contenedor {
+
+        min-height: calc(100vh - 75px);
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        padding: 50px 20px;
+
+    }
+
+
+
+    /* =====================================================
+       TARJETA
+    ===================================================== */
+
+    .perfil-card {
+
+        position: relative;
+
+        width: min(650px, 100%);
+
+        padding: 55px 50px 40px;
+
+        text-align: center;
+
+        background:
+            linear-gradient(
+                145deg,
+                #07152e,
+                #020914
+            );
+
+        border-radius: 25px;
+
+        border: 1px solid rgba(0, 140, 255, 0.45);
+
+        box-shadow:
+
+            0 0 15px rgba(0, 110, 255, 0.25),
+
+            0 0 45px rgba(0, 100, 255, 0.18),
+
+            inset 0 0 30px rgba(0, 100, 255, 0.05);
+
+        overflow: hidden;
+
+    }
+
+
+
+    /* =====================================================
+       LÍNEA SUPERIOR
+    ===================================================== */
+
+    .perfil-linea {
+
+        position: absolute;
+
+        top: 0;
+
+        left: 10%;
+
+        width: 80%;
+
+        height: 2px;
+
+        background: #008cff;
+
+        box-shadow:
+
+            0 0 5px #008cff,
+
+            0 0 15px #008cff,
+
+            0 0 30px #006eff;
+
+    }
+
+
+
+    /* =====================================================
+       FOTO
+    ===================================================== */
+
+    .foto-perfil-contenedor {
+
+        position: relative;
+
+        width: 180px;
+
+        height: 180px;
+
+        margin: 0 auto 25px;
+
+        border-radius: 50%;
+
+        padding: 5px;
+
+        background: #008cff;
+
+        box-shadow:
+
+            0 0 8px #008cff,
+
+            0 0 20px #008cff,
+
+            0 0 45px rgba(0, 140, 255, 0.8),
+
+            0 0 80px rgba(0, 90, 255, 0.45);
+
+        z-index: 1;
+
+    }
+
+
+
+    .foto-perfil-contenedor img {
+
+        width: 100%;
+
+        height: 100%;
+
+        display: block;
+
+        object-fit: cover;
+
+        border-radius: 50%;
+
+        background: #020812;
+
+        border: 4px solid #020812;
+
+    }
+
+
+
+    /* BRILLO EXTERIOR */
+
+    .brillo-foto {
+
+        position: absolute;
+
+        inset: -8px;
+
+        border-radius: 50%;
+
+        border: 2px solid rgba(0, 174, 255, 0.35);
+
+        box-shadow:
+
+            0 0 20px rgba(0, 174, 255, 0.6);
+
+        pointer-events: none;
+
+        z-index: -1;
+
+    }
+
+
+
+    /* =====================================================
+       NOMBRE
+    ===================================================== */
+
+    #nombrePerfil {
+
+        margin: 5px 0 5px;
+
+        font-size: 38px;
+
+        font-weight: bold;
+
+        color: white;
+
+        text-shadow:
+
+            0 0 8px rgba(255,255,255,0.2);
+
+    }
+
+
+
+    /* =====================================================
+       CORREO
+    ===================================================== */
+
+    .correo-perfil {
+
+        margin: 0 0 25px;
+
+        color: #9db8d8;
+
+        font-size: 15px;
+
+    }
+
+
+
+    /* =====================================================
+       BOTÓN CAMBIAR FOTO
+    ===================================================== */
+
+    .boton-cambiar-foto {
+
+        border: none;
+
+        padding: 14px 25px;
+
+        border-radius: 10px;
+
+        background:
+
+            linear-gradient(
+                135deg,
+                #008cff,
+                #0055ff
+            );
+
+        color: white;
+
+        font-size: 15px;
+
+        font-weight: bold;
+
+        cursor: pointer;
+
+        box-shadow:
+
+            0 0 10px rgba(0, 140, 255, 0.5),
+
+            0 0 25px rgba(0, 90, 255, 0.25);
+
+        transition: 0.25s;
+
+    }
+
+
+
+    .boton-cambiar-foto:hover {
+
+        transform: translateY(-2px);
+
+        box-shadow:
+
+            0 0 15px #008cff,
+
+            0 0 35px rgba(0, 110, 255, 0.65);
+
+    }
+
+
+
+    /* =====================================================
+       ESTADÍSTICAS
+    ===================================================== */
+
+    .estadisticas-perfil {
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 20px;
+
+        margin-top: 35px;
+
+    }
+
+
+
+    .estadistica {
+
+        padding: 22px 15px;
+
+        border-radius: 15px;
+
+        background: rgba(2, 15, 35, 0.8);
+
+        border: 1px solid rgba(0, 130, 255, 0.35);
+
+        box-shadow:
+
+            inset 0 0 20px rgba(0, 100, 255, 0.05);
+
+    }
+
+
+
+    .icono-estadistica {
+
+        font-size: 25px;
+
+        margin-bottom: 8px;
+
+        color: #00a2ff;
+
+        text-shadow:
+
+            0 0 10px #008cff;
+
+    }
+
+
+
+    .icono-estadistica.estrella {
+
+        color: #ffd84d;
+
+        text-shadow:
+
+            0 0 8px rgba(255, 216, 77, 0.7);
+
+    }
+
+
+
+    .estadistica h3 {
+
+        margin: 5px 0 10px;
+
+        color: white;
+
+        font-size: 15px;
+
+        font-weight: normal;
+
+    }
+
+
+
+    .estadistica span {
+
+        display: block;
+
+        font-size: 32px;
+
+        font-weight: bold;
+
+        color: #008cff;
+
+        text-shadow:
+
+            0 0 10px rgba(0, 140, 255, 0.6);
+
+    }
+
+
+
+    /* =====================================================
+       ACCIONES
+    ===================================================== */
+
+    .acciones-perfil {
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 15px;
+
+        margin-top: 25px;
+
+    }
+
+
+
+    .boton-favoritos {
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        padding: 14px;
+
+        border-radius: 10px;
+
+        background:
+
+            linear-gradient(
+                135deg,
+                #008cff,
+                #0055ff
+            );
+
+        color: white;
+
+        text-decoration: none;
+
+        font-weight: bold;
+
+        transition: 0.25s;
+
+        box-shadow:
+
+            0 0 15px rgba(0, 110, 255, 0.3);
+
+    }
+
+
+
+    .boton-favoritos:hover {
+
+        transform: translateY(-2px);
+
+        box-shadow:
+
+            0 0 20px rgba(0, 140, 255, 0.7);
+
+    }
+
+
+
+    .boton-cerrar-sesion {
+
+        border: 1px solid rgba(130, 160, 200, 0.35);
+
+        border-radius: 10px;
+
+        background: #07101e;
+
+        color: white;
+
+        font-size: 14px;
+
+        cursor: pointer;
+
+        transition: 0.25s;
+
+    }
+
+
+
+    .boton-cerrar-sesion:hover {
+
+        background: #101d30;
+
+        border-color: #008cff;
+
+        box-shadow:
+
+            0 0 12px rgba(0, 140, 255, 0.3);
+
+    }
+
+
+
+    /* =====================================================
+       VOLVER
+    ===================================================== */
+
+    .volver-inicio {
+
+        display: inline-block;
+
+        margin-top: 30px;
+
+        color: #008cff;
+
+        text-decoration: none;
+
+        font-size: 14px;
+
+        transition: 0.2s;
+
+    }
+
+
+
+    .volver-inicio:hover {
+
+        color: #4db8ff;
+
+        text-shadow:
+
+            0 0 10px #008cff;
+
+    }
+
+
+
+    /* =====================================================
+       MÓVIL
+    ===================================================== */
+
+    @media (max-width: 600px) {
+
+        .perfil-contenedor {
+
+            padding: 30px 15px;
+
+        }
+
+
+        .perfil-card {
+
+            padding: 45px 20px 30px;
+
+        }
+
+
+        .foto-perfil-contenedor {
+
+            width: 145px;
+
+            height: 145px;
+
+        }
+
+
+        #nombrePerfil {
+
+            font-size: 30px;
+
+        }
+
+
+        .estadisticas-perfil {
+
+            grid-template-columns: 1fr;
+
+        }
+
+
+        .acciones-perfil {
+
+            grid-template-columns: 1fr;
+
+        }
+
+    }
+
+</style>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Iniciar sesión | Mundo de Videojuegos
+    </title>
+
+    <link rel="stylesheet"
+          href="css/estilos.css">
+
+</head>
+
+
+<body>
+
+
+<header class="encabezado">
+
+    <div class="logo">
+
+        🎮
+
+        <span>
+            Mundo de <strong>Videojuegos</strong>
+        </span>
+
+    </div>
+
+
+    <nav class="menu-principal">
+
+        <a href="index.html">
+            Inicio
+        </a>
+
+        <a href="index.html#videojuegos">
+            Videojuegos
+        </a>
+
+        <a href="cuenta.html">
+            Registrarse
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main class="formulario-pagina">
+
+
+    <div class="formulario-contenedor">
+
+
+        <div class="formulario-icono">
+            🎮
+        </div>
+
+
+        <h1>
+            Iniciar sesión
+        </h1>
+
+
+        <p class="formulario-subtitulo">
+
+            Ingresa a tu cuenta para acceder
+            a tu perfil.
+
+        </p>
+
+
+
+        <form id="formLogin">
+
+
+            <div class="campo">
+
+                <label for="loginCorreo">
+                    Correo electrónico
+                </label>
+
+                <input
+                    type="email"
+                    id="loginCorreo"
+                    placeholder="ejemplo@correo.com"
+                    required>
+
+            </div>
+
+
+
+            <div class="campo">
+
+                <label for="loginPassword">
+                    Contraseña
+                </label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Tu contraseña"
+                    required>
+
+            </div>
+
+
+
+            <button
+                type="submit"
+                class="boton-formulario">
+
+                Iniciar sesión
+
+            </button>
+
+
+        </form>
+
+
+
+        <p class="formulario-pie">
+
+            ¿No tienes una cuenta?
+
+            <a href="cuenta.html">
+                Crear cuenta
+            </a>
+
+        </p>
+
+
+
+        <a
+            href="index.html"
+            class="volver">
+
+            ← Volver al inicio
+
+        </a>
+
+
+    </div>
+
+</main>
+
+
+
+<footer>
+
+    <p>
+
+        © 2026 Mundo de Videojuegos
+
+        <span>|</span>
+
+        Todos los derechos reservados
+
+    </p>
+
+</footer>
+
+
+
+<script>
+
+document.getElementById("formLogin")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+
+    const correo =
+        document.getElementById("loginCorreo")
+        .value
+        .trim();
+
+
+    const password =
+        document.getElementById("loginPassword")
+        .value;
+
+
+    /* Buscar usuario registrado */
+
+    const usuarioGuardado =
+        localStorage.getItem(
+            "usuarioRegistrado"
+        );
+
+
+    if (!usuarioGuardado) {
+
+        alert(
+            "No existe una cuenta registrada. Primero debes crear una cuenta."
+        );
+
+        return;
+
+    }
+
+
+    const usuario =
+        JSON.parse(usuarioGuardado);
+
+
+    /* Comprobar datos */
+
+    if (
+        correo === usuario.correo &&
+        password === usuario.password
+    ) {
+
+
+        /* Guardar sesión */
+
+        localStorage.setItem(
+            "usuarioVideojuegos",
+            JSON.stringify(usuario)
+        );
+
+
+        alert(
+            "¡Inicio de sesión correcto!"
+        );
+
+
+        /* Ir al perfil */
+
+        window.location.href =
+            "perfil.html";
+
+
+    } else {
+
+        alert(
+            "El correo o la contraseña son incorrectos."
+        );
+
+    }
+
+});
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Mis Favoritos | Mundo de Videojuegos</title>
+
+    <link rel="stylesheet"
+          href="css/estilos.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================
+     ENCABEZADO
+========================================= -->
+
+<header class="encabezado">
+
+    <div class="logo">
+        🎮 <span>Mundo de <strong>Videojuegos</strong></span>
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Inicio
+        </a>
+
+        <a href="index.html#videojuegos">
+            Videojuegos
+        </a>
+
+        <a href="index.html#contacto">
+            Contacto
+        </a>
+
+        <a href="favoritos.html"
+           class="activo">
+            ♥ Favoritos
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ========================================
+     FAVORITOS
+========================================= -->
+
+<main class="favoritos-pagina">
+
+    <div class="titulo-seccion">
+
+        <span>🎮</span>
+
+        <h2>
+            ♥ Mis videojuegos favoritos
+        </h2>
+
+        <span>🎮</span>
+
+        <p class="subtitulo">
+            Aquí encontrarás los videojuegos que has guardado.
+        </p>
+
+    </div>
+
+
+    <div
+        id="listaFavoritos"
+        class="lista-favoritos">
+    </div>
+
+</main>
+
+<!-- ========================================
+     PIE DE PÁGINA
+========================================= -->
+
+<footer>
+
+    <p>
+        © 2026 Mundo de Videojuegos
+        <span>|</span>
+        Todos los derechos reservados
+    </p>
+
+</footer>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* ==========================================
+       CONTENEDOR DE FAVORITOS
+    ========================================== */
+
+    const contenedor =
+        document.getElementById("listaFavoritos");
+
+
+    if (!contenedor) {
+        return;
+    }
+
+
+    /* ==========================================
+       OBTENER FAVORITOS
+    ========================================== */
+
+    function obtenerFavoritos() {
+
+        try {
+
+            return JSON.parse(
+                localStorage.getItem("favoritos") || "[]"
+            );
+
+        } catch (error) {
+
+            return [];
+
+        }
+
+    }
+
+
+    /* ==========================================
+       MOSTRAR FAVORITOS
+    ========================================== */
+
+    function mostrarFavoritos() {
+
+        const favoritos = obtenerFavoritos();
+
+
+        contenedor.innerHTML = "";
+
+
+        /* ======================================
+           SI NO HAY FAVORITOS
+        ====================================== */
+
+        if (favoritos.length === 0) {
+
+            contenedor.innerHTML = `
+
+                <div class="sin-favoritos">
+
+                    <div class="icono-vacio">
+                        ♡
+                    </div>
+
+
+                    <h2>
+                        No tienes videojuegos favoritos
+                    </h2>
+
+
+                    <p>
+                        Ve a la página principal y agrega
+                        tus videojuegos favoritos.
+                    </p>
+
+
+                    <a href="index.html">
+                        🎮 Explorar videojuegos
+                    </a>
+
+                </div>
+
+            `;
+
+            return;
+        }
+
+
+        /* ======================================
+           MOSTRAR CADA FAVORITO
+        ====================================== */
+
+        favoritos.forEach(function (videojuego) {
+
+
+            const tarjeta =
+                document.createElement("article");
+
+
+            tarjeta.className =
+                "favorito-card";
+
+
+            tarjeta.innerHTML = `
+
+                <div class="favorito-imagen">
+
+                    <img
+                        src="${videojuego.imagen}"
+                        alt="${videojuego.nombre}"
+                        onerror="this.src='img/perfil.png';"
+                    >
+
+                </div>
+
+
+                <div class="favorito-info">
+
+                    <h3>
+                        ${videojuego.nombre}
+                    </h3>
+
+
+                    <div class="favorito-estrellas">
+                        ★★★★★
+                    </div>
+
+
+                    <a
+                        href="detalles/${videojuego.id}.html"
+                        class="boton-ver-favorito">
+
+                        🎮 Ver videojuego
+
+                    </a>
+
+
+                    <button
+                        type="button"
+                        class="boton-eliminar-favorito"
+                        data-id="${videojuego.id}">
+
+                        ♥ Quitar de favoritos
+
+                    </button>
+
+                </div>
+
+            `;
+
+
+            contenedor.appendChild(tarjeta);
+
+        });
+
+
+        /* ======================================
+           BOTONES ELIMINAR
+        ====================================== */
+
+        const botonesEliminar =
+            contenedor.querySelectorAll(
+                ".boton-eliminar-favorito"
+            );
+
+
+        botonesEliminar.forEach(function (boton) {
+
+
+            boton.addEventListener(
+                "click",
+                function () {
+
+
+                    const id =
+                        boton.dataset.id;
+
+
+                    let favoritos =
+                        obtenerFavoritos();
+
+
+                    favoritos =
+                        favoritos.filter(
+                            function (item) {
+
+                                return item.id !== id;
+
+                            }
+                        );
+
+
+                    localStorage.setItem(
+                        "favoritos",
+                        JSON.stringify(favoritos)
+                    );
+
+
+                    mostrarFavoritos();
+
+                }
+            );
+
+        });
+
+    }
+
+
+    /* ==========================================
+       INICIAR
+    ========================================== */
+
+    mostrarFavoritos();
+
+});
+
+</script>
+
+</body>
+
+</html>
